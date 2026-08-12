@@ -112,7 +112,7 @@ if not selected_matches:
         print("Test message sent successfully.")
         return
 
-    message = "⚽️ بازی‌های مهم امروز\n\n"
+message = "⚽️ بازی‌های مهم امروز\n\n"
 
     message += "\n\n".join(
         format_match(match)
@@ -124,7 +124,6 @@ if not selected_matches:
     print(
         f"{len(selected_matches)} matches sent successfully."
     )
-
 
 if __name__ == "__main__":
     main()
