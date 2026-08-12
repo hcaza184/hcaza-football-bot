@@ -103,14 +103,14 @@ def main():
         if match["competition"]["code"] in COMPETITIONS
     ]
 
-   if not selected_matches:
-    send_telegram(
-        "✅ اتصال کامل شد\n\n"
-        "بات فوتبال HCaza با موفقیت به GitHub Actions و تلگرام متصل شد.\n\n"
-        "⚽️ امروز از رقابت‌های انتخاب‌شده بازی‌ای برای انتشار پیدا نشد."
-    )
-    print("Test message sent successfully.")
-    return
+if not selected_matches:
+        send_telegram(
+            "✅ اتصال کامل شد\n\n"
+            "بات فوتبال HCaza با موفقیت به GitHub Actions و تلگرام متصل شد.\n\n"
+            "⚽️ امروز از رقابت‌های انتخاب‌شده بازی‌ای برای انتشار پیدا نشد."
+        )
+        print("Test message sent successfully.")
+        return
 
     message = "⚽️ بازی‌های مهم امروز\n\n"
 
