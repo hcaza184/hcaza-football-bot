@@ -110,9 +110,9 @@ def send_telegram(text):
 
 
 def main():
-matches = get_matches()
-extra_matches = get_extra_matches()
-print(f"Extra source returned {len(extra_matches)} events.")
+    matches = get_matches()
+    extra_matches = get_extra_matches()
+    print(f"Extra source returned {len(extra_matches)} events.")
     selected_matches = [
         match
         for match in matches
