@@ -29,6 +29,22 @@ def get_matches():
     response.raise_for_status()
     return response.json().get("matches", [])
 
+def get_extra_matches():
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+
+    response = requests.get(
+        "https://www.thesportsdb.com/api/v1/json/123/eventsday.php",
+        params={
+            "d": today,
+            "s": "Soccer"
+        },
+        timeout=20
+    )
+
+    response.raise_for_status()
+    data = response.json()
+
+    return data.get("events") or []
 
 def format_match(match):
     competition_code = match["competition"]["code"]
@@ -94,8 +110,9 @@ def send_telegram(text):
 
 
 def main():
-    matches = get_matches()
-
+matches = get_matches()
+extra_matches = get_extra_matches()
+print(f"Extra source returned {len(extra_matches)} events.")
     selected_matches = [
         match
         for match in matches
