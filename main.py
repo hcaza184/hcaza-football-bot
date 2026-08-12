@@ -15,7 +15,6 @@ COMPETITIONS = {
     "CL": "🇪🇺 لیگ قهرمانان اروپا",
 }
 
-
 def get_matches():
     headers = {
         "X-Auth-Token": FOOTBALL_DATA_TOKEN
@@ -28,7 +27,7 @@ def get_matches():
     )
 
     response.raise_for_status()
-    return response.json()["matches"]
+    return response.json().get("matches", [])
 
 
 def format_match(match):
