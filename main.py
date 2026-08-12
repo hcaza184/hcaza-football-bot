@@ -202,11 +202,11 @@ def main():
     )
 
     if relevant_extra_matches:
-    message += "\n\n🏆 جام‌ها و بازی‌های دوستانه\n\n"
-    message += "\n\n".join(
-        format_extra_match(event)
-        for event in relevant_extra_matches
-    )
+        message += "\n\n🏆 جام‌ها و بازی‌های دوستانه\n\n"
+        message += "\n\n".join(
+            format_extra_match(event)
+            for event in relevant_extra_matches
+        )
     send_telegram(message)
 
     print(
